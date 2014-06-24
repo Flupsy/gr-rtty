@@ -22,13 +22,13 @@
 #ifndef INCLUDED_RTTY_decode_FF_H
 #define INCLUDED_RTTY_decode_FF_H
 
-#include <gr_block.h>
+#include <gnuradio/block.h>
 
 class rtty_decode_ff;
 
 /*
  * We use boost::shared_ptr's instead of raw pointers for all access
- * to gr_blocks (and many other data structures).  The shared_ptr gets
+ * to gr::blocks (and many other data structures).  The shared_ptr gets
  * us transparent reference counting, which greatly simplifies storage
  * management issues.  This is especially helpful in our hybrid
  * C++ / Python system.
@@ -54,7 +54,7 @@ rtty_decode_ff_sptr rtty_make_decode_ff (float rate, float baud, bool polarity);
  *
  * \sa rtty_decode2_ff for a version that subclasses gr_sync_block.
  */
-class rtty_decode_ff : public gr_block
+class rtty_decode_ff : public gr::block
 {
 private:
   // The friend declaration allows rtty_make_decode_ff to
